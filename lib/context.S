@@ -32,7 +32,7 @@ coroutine_switch:
     movq  128(%rdi),  %r15
 
 
-    pushq 136(%rsi)
+    jmpq  136(%rsi)
     # 最后 jmpq 到上下文保存的 rip
     # 为什么 不可以直接 ret 吗
 
