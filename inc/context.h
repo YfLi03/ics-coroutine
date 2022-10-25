@@ -141,6 +141,7 @@ struct coroutine_context : public basic_context {
    */
   virtual void resume() {
     // 调用 coroutine_switch
+    coroutine_switch(caller_registers, callee_registers);
     // 在汇编中保存 callee-saved 寄存器，设置协程函数栈帧，然后将 rip 恢复到协程 yield 之后所需要执行的指令地址。
   }
 

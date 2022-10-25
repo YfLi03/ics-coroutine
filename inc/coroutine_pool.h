@@ -48,6 +48,7 @@ struct coroutine_pool {
 
   /**
    * @brief 以协程执行的方式串行并同时执行所有协程函数
+   * @b 何谓串行同时执行？
    * TODO: Task 1, Task 2
    * 在 Task 1 中，我们不需要考虑协程的 ready
    * 属性，即可以采用轮询的方式挑选一个未完成执行的协程函数进行继续执行的操作。
@@ -61,7 +62,13 @@ struct coroutine_pool {
     g_pool = this;
 
     for (auto context : coroutines) {
-      delete context;
+      if ( context->finished ) {
+        delete context;
+      } else {
+        context->resume();
+        coroutines.push_back(context);
+      }
+      g_pool->context_id++;
     }
     coroutines.clear();
   }
