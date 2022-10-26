@@ -66,12 +66,15 @@ struct coroutine_pool {
       all_finished = true;
       g_pool->context_id = 0;
 
-      for (auto context : coroutines) {
-        if ( context == nullptr || context->finished ) {
+      for (auto &context : coroutines) {
+        if ( context == nullptr || context->finished ) {  
           delete context;
           context = nullptr;
         } else {
-          context->resume();
+          if(context->ready || context->ready_func() ) { //the second will not be visited if ready is true
+            context->ready = true;
+            context->resume();
+          }
           all_finished = false;
         }
         g_pool->context_id++;

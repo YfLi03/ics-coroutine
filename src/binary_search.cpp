@@ -18,6 +18,8 @@ void lookup_coroutine(const uint32_t *table, size_t size, uint32_t value,
 
     // TODO: Task 3
     // 使用 __builtin_prefetch 预取容易产生缓存缺失的内存
+    __builtin_prefetch(&table[probe], 0, 3);
+    yield();
     // 并调用 yield
 
     uint32_t v = table[probe];

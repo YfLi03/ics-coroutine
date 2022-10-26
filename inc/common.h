@@ -42,10 +42,19 @@ void sleep(uint64_t ms) {
       ;
   } else {
     // 从 g_pool 中获取当前协程状态
+    auto context = g_pool->coroutines[g_pool->context_id];
+    context->ready = false;
 
     // 获取当前时间，更新 ready_func
+    auto cur = get_time();
+    context->ready_func = [cur, ms](){
+      return std::chrono::duration_cast<std::chrono::milliseconds>(get_time() - cur)
+            .count() >= ms;
+    };
     // ready_func：检查当前时间，如果已经超时，则返回 true
 
     // 调用 coroutine_switch 切换到 coroutine_pool 上下文
+    coroutine_switch(context->callee_registers, context->caller_registers);
+
   }
 }
