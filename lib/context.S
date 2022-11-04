@@ -8,7 +8,6 @@ coroutine_switch:
     # TODO: Task 1
     # 保存 callee-saved 寄存器到 %rdi 指向的上下文
     # 由于调用 yield 和 coroutine_switch 仍然是调用函数的样子，因此 caller_saved regs 无需手动保存。
-    # Question: What to do with rsp?
     movq  %rsp, 64(%rdi)
     movq  %rbx, 72(%rdi)
     movq  %rbp, 80(%rdi)
@@ -33,7 +32,6 @@ coroutine_switch:
 
     jmpq  *120(%rsi)
     # 最后 jmpq 到上下文保存的 rip
-    # 为什么 不可以直接 ret 吗
 
 .coroutine_ret:
     ret

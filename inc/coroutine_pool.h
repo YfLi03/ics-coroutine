@@ -71,7 +71,7 @@ struct coroutine_pool {
           delete context;
           context = nullptr;
         } else {
-          if(context->ready || context->ready_func() ) { //the second will not be visited if ready is true
+          if( context->ready || context->ready_func() ) { //the second will not be visited if ready is true
             context->ready = true;
             context->resume();
           }
