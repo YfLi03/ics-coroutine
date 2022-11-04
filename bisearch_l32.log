@@ -1,0 +1,700 @@
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2052.94 ns per search, 64.15 ns per access
+coroutine batched: 1678.61 ns per search, 52.46 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1978.75 ns per search, 61.84 ns per access
+coroutine batched: 1829.13 ns per search, 57.16 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2068.86 ns per search, 64.65 ns per access
+coroutine batched: 1711.91 ns per search, 53.50 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2069.47 ns per search, 64.67 ns per access
+coroutine batched: 1866.36 ns per search, 58.32 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1997.89 ns per search, 62.43 ns per access
+coroutine batched: 1709.65 ns per search, 53.43 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2078.71 ns per search, 64.96 ns per access
+coroutine batched: 1905.15 ns per search, 59.54 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2041.61 ns per search, 63.80 ns per access
+coroutine batched: 1806.38 ns per search, 56.45 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2052.23 ns per search, 64.13 ns per access
+coroutine batched: 1758.44 ns per search, 54.95 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1992.64 ns per search, 62.27 ns per access
+coroutine batched: 1728.30 ns per search, 54.01 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2030.49 ns per search, 63.45 ns per access
+coroutine batched: 1781.85 ns per search, 55.68 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2017.01 ns per search, 63.03 ns per access
+coroutine batched: 1782.30 ns per search, 55.70 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2082.65 ns per search, 65.08 ns per access
+coroutine batched: 1852.11 ns per search, 57.88 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2156.65 ns per search, 67.40 ns per access
+coroutine batched: 1786.74 ns per search, 55.84 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2042.88 ns per search, 63.84 ns per access
+coroutine batched: 1732.91 ns per search, 54.15 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2139.68 ns per search, 66.87 ns per access
+coroutine batched: 1743.22 ns per search, 54.48 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2054.33 ns per search, 64.20 ns per access
+coroutine batched: 1717.65 ns per search, 53.68 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2059.40 ns per search, 64.36 ns per access
+coroutine batched: 1736.23 ns per search, 54.26 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1977.96 ns per search, 61.81 ns per access
+coroutine batched: 1726.71 ns per search, 53.96 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1989.90 ns per search, 62.18 ns per access
+coroutine batched: 1703.13 ns per search, 53.22 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2212.03 ns per search, 69.13 ns per access
+coroutine batched: 1769.57 ns per search, 55.30 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 5175.59 ns per search, 161.74 ns per access
+coroutine batched: 6119.27 ns per search, 191.23 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1982.48 ns per search, 61.95 ns per access
+coroutine batched: 1751.26 ns per search, 54.73 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1829.71 ns per search, 57.18 ns per access
+coroutine batched: 1994.29 ns per search, 62.32 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 6158.65 ns per search, 192.46 ns per access
+coroutine batched: 4912.60 ns per search, 153.52 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2309.50 ns per search, 72.17 ns per access
+coroutine batched: 1805.61 ns per search, 56.43 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2272.28 ns per search, 71.01 ns per access
+coroutine batched: 1856.63 ns per search, 58.02 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2070.68 ns per search, 64.71 ns per access
+coroutine batched: 1537.10 ns per search, 48.03 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2024.61 ns per search, 63.27 ns per access
+coroutine batched: 1753.00 ns per search, 54.78 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 7073.23 ns per search, 221.04 ns per access
+coroutine batched: 1916.15 ns per search, 59.88 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2155.49 ns per search, 67.36 ns per access
+coroutine batched: 1819.54 ns per search, 56.86 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1963.17 ns per search, 61.35 ns per access
+coroutine batched: 1706.56 ns per search, 53.33 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2018.82 ns per search, 63.09 ns per access
+coroutine batched: 1760.24 ns per search, 55.01 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2075.20 ns per search, 64.85 ns per access
+coroutine batched: 1815.38 ns per search, 56.73 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2033.73 ns per search, 63.55 ns per access
+coroutine batched: 1714.49 ns per search, 53.58 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2083.40 ns per search, 65.11 ns per access
+coroutine batched: 1745.65 ns per search, 54.55 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2177.92 ns per search, 68.06 ns per access
+coroutine batched: 1475.59 ns per search, 46.11 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2128.52 ns per search, 66.52 ns per access
+coroutine batched: 1801.04 ns per search, 56.28 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2060.65 ns per search, 64.40 ns per access
+coroutine batched: 1737.14 ns per search, 54.29 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 7293.53 ns per search, 227.92 ns per access
+coroutine batched: 4627.46 ns per search, 144.61 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1951.38 ns per search, 60.98 ns per access
+coroutine batched: 1728.26 ns per search, 54.01 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2102.49 ns per search, 65.70 ns per access
+coroutine batched: 1726.26 ns per search, 53.95 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1930.56 ns per search, 60.33 ns per access
+coroutine batched: 1712.74 ns per search, 53.52 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2094.78 ns per search, 65.46 ns per access
+coroutine batched: 1774.95 ns per search, 55.47 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2009.57 ns per search, 62.80 ns per access
+coroutine batched: 1714.78 ns per search, 53.59 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2135.90 ns per search, 66.75 ns per access
+coroutine batched: 1787.68 ns per search, 55.86 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1983.06 ns per search, 61.97 ns per access
+coroutine batched: 2088.15 ns per search, 65.25 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2055.68 ns per search, 64.24 ns per access
+coroutine batched: 1711.79 ns per search, 53.49 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2074.29 ns per search, 64.82 ns per access
+coroutine batched: 1760.98 ns per search, 55.03 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2086.05 ns per search, 65.19 ns per access
+coroutine batched: 1723.48 ns per search, 53.86 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2059.21 ns per search, 64.35 ns per access
+coroutine batched: 1701.54 ns per search, 53.17 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2113.89 ns per search, 66.06 ns per access
+coroutine batched: 1815.53 ns per search, 56.74 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2025.31 ns per search, 63.29 ns per access
+coroutine batched: 2785.66 ns per search, 87.05 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2175.86 ns per search, 68.00 ns per access
+coroutine batched: 1852.19 ns per search, 57.88 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2209.60 ns per search, 69.05 ns per access
+coroutine batched: 1778.87 ns per search, 55.59 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1965.74 ns per search, 61.43 ns per access
+coroutine batched: 1721.38 ns per search, 53.79 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2307.00 ns per search, 72.09 ns per access
+coroutine batched: 1946.66 ns per search, 60.83 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2085.47 ns per search, 65.17 ns per access
+coroutine batched: 1784.94 ns per search, 55.78 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2085.99 ns per search, 65.19 ns per access
+coroutine batched: 1843.14 ns per search, 57.60 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2070.04 ns per search, 64.69 ns per access
+coroutine batched: 1723.21 ns per search, 53.85 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2028.65 ns per search, 63.40 ns per access
+coroutine batched: 1647.19 ns per search, 51.47 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2003.95 ns per search, 62.62 ns per access
+coroutine batched: 1737.14 ns per search, 54.29 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2221.96 ns per search, 69.44 ns per access
+coroutine batched: 1742.88 ns per search, 54.46 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2095.40 ns per search, 65.48 ns per access
+coroutine batched: 1734.39 ns per search, 54.20 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2154.40 ns per search, 67.33 ns per access
+coroutine batched: 1756.42 ns per search, 54.89 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1907.75 ns per search, 59.62 ns per access
+coroutine batched: 1682.01 ns per search, 52.56 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2140.04 ns per search, 66.88 ns per access
+coroutine batched: 1750.20 ns per search, 54.69 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2105.51 ns per search, 65.80 ns per access
+coroutine batched: 1704.42 ns per search, 53.26 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1975.20 ns per search, 61.72 ns per access
+coroutine batched: 1744.43 ns per search, 54.51 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2007.88 ns per search, 62.75 ns per access
+coroutine batched: 1716.07 ns per search, 53.63 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2077.76 ns per search, 64.93 ns per access
+coroutine batched: 1728.73 ns per search, 54.02 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2079.49 ns per search, 64.98 ns per access
+coroutine batched: 1792.09 ns per search, 56.00 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1933.82 ns per search, 60.43 ns per access
+coroutine batched: 1673.16 ns per search, 52.29 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2055.53 ns per search, 64.24 ns per access
+coroutine batched: 1680.30 ns per search, 52.51 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2124.76 ns per search, 66.40 ns per access
+coroutine batched: 1724.70 ns per search, 53.90 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2015.35 ns per search, 62.98 ns per access
+coroutine batched: 1702.91 ns per search, 53.22 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1961.47 ns per search, 61.30 ns per access
+coroutine batched: 1707.88 ns per search, 53.37 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 4734.42 ns per search, 147.95 ns per access
+coroutine batched: 6760.08 ns per search, 211.25 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2025.05 ns per search, 63.28 ns per access
+coroutine batched: 1705.58 ns per search, 53.30 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2061.58 ns per search, 64.42 ns per access
+coroutine batched: 1730.67 ns per search, 54.08 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2077.52 ns per search, 64.92 ns per access
+coroutine batched: 1797.96 ns per search, 56.19 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2037.11 ns per search, 63.66 ns per access
+coroutine batched: 1672.96 ns per search, 52.28 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2043.49 ns per search, 63.86 ns per access
+coroutine batched: 1774.94 ns per search, 55.47 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2025.70 ns per search, 63.30 ns per access
+coroutine batched: 1714.02 ns per search, 53.56 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2083.50 ns per search, 65.11 ns per access
+coroutine batched: 1683.76 ns per search, 52.62 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1991.35 ns per search, 62.23 ns per access
+coroutine batched: 1719.75 ns per search, 53.74 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2143.46 ns per search, 66.98 ns per access
+coroutine batched: 1740.96 ns per search, 54.40 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1961.86 ns per search, 61.31 ns per access
+coroutine batched: 1695.72 ns per search, 52.99 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2029.88 ns per search, 63.43 ns per access
+coroutine batched: 1824.37 ns per search, 57.01 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2037.45 ns per search, 63.67 ns per access
+coroutine batched: 1712.48 ns per search, 53.52 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1987.93 ns per search, 62.12 ns per access
+coroutine batched: 1705.93 ns per search, 53.31 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2038.94 ns per search, 63.72 ns per access
+coroutine batched: 1717.15 ns per search, 53.66 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2970.21 ns per search, 92.82 ns per access
+coroutine batched: 5936.10 ns per search, 185.50 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2030.17 ns per search, 63.44 ns per access
+coroutine batched: 1822.14 ns per search, 56.94 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2515.39 ns per search, 78.61 ns per access
+coroutine batched: 4237.40 ns per search, 132.42 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2047.59 ns per search, 63.99 ns per access
+coroutine batched: 1738.34 ns per search, 54.32 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2065.89 ns per search, 64.56 ns per access
+coroutine batched: 1791.19 ns per search, 55.97 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2096.46 ns per search, 65.51 ns per access
+coroutine batched: 1827.62 ns per search, 57.11 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 1985.94 ns per search, 62.06 ns per access
+coroutine batched: 1830.97 ns per search, 57.22 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2106.92 ns per search, 65.84 ns per access
+coroutine batched: 1851.57 ns per search, 57.86 ns per access
+------------
+Size: 4294967296
+Loops: 1000000
+Batch size: 16
+Initialization done
+naive: 2024.20 ns per search, 63.26 ns per access
+coroutine batched: 1740.46 ns per search, 54.39 ns per access
+------------
