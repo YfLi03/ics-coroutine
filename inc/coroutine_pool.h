@@ -3,6 +3,7 @@
 #include <memory>
 #include <thread>
 #include <vector>
+#include <queue>
 
 struct coroutine_pool;
 extern coroutine_pool *g_pool;
@@ -56,6 +57,7 @@ struct coroutine_pool {
    *
    * 当所有协程函数都执行完毕后，退出该函数。
    */
+   
   void serial_execute_all() {
     is_parallel = false;
     g_pool = this;
@@ -82,4 +84,5 @@ struct coroutine_pool {
     }
     coroutines.clear();
   }
+  
 };
