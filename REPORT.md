@@ -8,7 +8,7 @@
 
 ## Task 1:
 
-#### 代码填写：
+#### 1.1 代码填写：
 
 ```cpp
 void yield() {
@@ -67,9 +67,9 @@ coroutine_switch:
     # 虽然难以直接修改 %rip 寄存器，但是可以使用 jmpq 跳转到应该去往的地址。大部分情况下执行的就是 ret 语句，但是当初次访问一些协程的时候我们访问的是 coroutine_entry 而非 .coroutine_ret， 因此在这里不能直接写 ret. 
 ```
 
-对于 `void serial_execute_all()` 函数中填空内容， Task2 所实现的功能为 Task1 的超集，因此留待后文解释，此处不作赘述。
+**对于 `void serial_execute_all()` 函数中填空内容， Task2 所实现的功能为 Task1 的超集，因此留待后文解释，此处不作赘述。**
 
-#### 阅读要求：
+#### 1.2 额外要求：
 
 ```cpp
 // TODO: Task 1
@@ -89,9 +89,9 @@ coroutine_switch:
     callee_registers[(int)Registers::R13] = (uint64_t)this;
 ```
 
-进入一个协程有且只有上下文切换 (coroutine_switch) 一种方法。对于恢复被 yield 的协程，这是很自然的想法。但是对于一个还没有被执行过的协程，这样的做法会显得比较困难，要求我们预先配置好协程的上下文（也就是寄存器）。这段代码起到了这一作用。
+进入一个协程有且只有上下文切换 (coroutine_switch) 一种方法。对于恢复被 yield 的协程，这是很自然的想法。但是对于一个还没有被执行过的协程，这样的做法会显得比较困难，要求我们**预先配置好协程的上下文（也就是寄存器）。这段代码起到了这一作用：**
 
-rsp 是（协程的）栈指针。对于每个协程，它实际指向堆上的一块足够大的空间空间，以此来模拟协程的栈。 `rsp & 0xF` 操作保证了栈是 16 字节对齐的，以免引发段错误。
+具体来说，rsp 是（协程的）栈指针。对于每个协程，它实际指向堆上的一块足够大的空间空间，以此来模拟协程的栈。 `rsp & 0xF` 操作保证了栈是 16 字节对齐的，以免引发段错误。
 
 除了 rsp 以外，这段代码还初始化了以下的“寄存器”：
 - rdi 被设置为 coroutine_entry。
@@ -99,9 +99,9 @@ rsp 是（协程的）栈指针。对于每个协程，它实际指向堆上的�
 
 其余几个寄存器都是空（或者说未设置）的。
 
-首次切换到某一协程后，会首先执行 coroutine_entry, coroutine_entry 配置好参数后，会调用 coroutine_main。对于 coroutine_main 所做的事情见下文。
+**流程**：首次切换到某一协程后，会首先执行 coroutine_entry, coroutine_entry 配置好参数后，会调用 coroutine_main。 coroutine_main 所做的事情请见下文。
 
-由于执行 context_switch 时并不会保存/恢复 rdi rsi 这样的存储参数的寄存器，因此需要额外的汇编代码（即 coroutine_entry ）配置这些参数，不能直接将协程的入口设置为 coroutine_main。
+*由于执行 context_switch 时并不会保存/恢复 rdi rsi 这样的存储参数的寄存器，因此需要额外的汇编代码（即 coroutine_entry ）配置这些参数，不能直接将协程的入口设置为 coroutine_main。*
 
 
 ```cpp
@@ -124,13 +124,15 @@ void coroutine_main(struct basic_context *context) {
 
 返回到 coroutine_main 后，执行的下一句语句就是 context->finished = true，这是合理的（因为具体的函数已经执行完毕了）。接下来会用 context_switch 切换回进入 coroutine_entry 之前的环境（一般情况也就是负责线程调度的父函数）。此后，这一已经被标为 finished 的协程将不再被访问，因此下一语句 assert(false) 自然是 unreachable 的。
 
-#### 上下文切换时的栈帧变化：
+#### 1.3 上下文切换时的栈帧变化：
 
 ![Stack's change](./material/stack.png)
 
+
+
 ## Task 2:
 
-#### 代码填写：
+#### 2.1 代码填写：
 
 ```cpp
 void serial_execute_all() {
@@ -146,14 +148,14 @@ void serial_execute_all() {
 
         // 如果第一个条件为真，第二个条件就不会被验证，因此不会出现非法访问的情况。
         if ( context == nullptr || context->finished ) {  
-          delete context;   // 聪明的编译器会使 delete nullptr 这种情况开销降到可以忽略不计的地步。
+          delete context;   // 聪明的编译器会使 delete nullptr 情况开销降到可以忽略不计的地步。
           context = nullptr;
         } else {
           if( context->ready || context->ready_func() ) {   // 如果不 ready, 再用 ready_func 验证
             context->ready = true;
             context->resume();
           }
-          all_finished = false; //一旦有一个非 finshed 的协成就设置为 false。这么写会多进行一轮轮询，但对效率不会有太大影响 
+          all_finished = false; //一旦有一个非 finshed 的协程就设置为 false。会多进行一轮轮询，但对效率不会有太大影响 
         }
         g_pool->context_id++;   // 需要设置 context_id 与（下一个）执行的 coroutine 相对应
       }
@@ -192,30 +194,32 @@ void sleep(uint64_t ms) {
 }
 ```
 
-#### 协程运行状况
+#### 2.2 协程运行状况
 
-![sleep_sort](./material/sleep_sort.png)
+<img src="./material/sleep_sort.png" alt="sleep_sort" style="zoom:67%;" />
 
-#### 更高效的协程库实现
+#### 2.3 更高效的协程库实现
 
 目前的做法是维护一个 Vector, 每一次每一个任务，无论是否完成，都会被查询。
 
-朴素的优化方法是维护一个 FIFO 的队列，依次查询。若一个任务已经完成了，及时将其从队列中踢出（不再放回队尾），这样可以达成常数级别的优化（节省不多于 1/2 的查询时间）。
+朴素的优化方法是维护一个 FIFO 的队列，（可采用链表实现）依次查询。若一个任务已经完成了，及时将其从队列中踢出（不再放回队尾），这样可以达成常数级别的优化（节省不多于 1/2 的查询时间）。
 
 若要达到更好效果的优化，我们可以部分参考现有的操作系统对进程调度的实现。我们可以要求每一个协程在创建时，根据自身特性，给予调度器一个 “优先级” 值。优先级越高，代表其 yield 所耗费的预期时间越少。对于 sleep_sort 中的函数，这个优先级即可以是其等待的时间。这种做法具有普适性，而且不会因为错误的优先级导致某些协程完全没有机会执行。
 
 在调度时，我们确保每一个协程被执行（即查询 ready_func) 的可能性与其优先级成正比。一个简单（粗糙）的实现是如下：
 
-> the priority value for each coroutine is set within [0,100]
+> *the priority value for each coroutine is set within [0,100]*
 > while ( unfinished )
->   for (i = 0; i < 100; i++ )
->     Try to execute coroutines with priority_val larger than i
+>       for (i = 0; i < 100; i++ )
+>             Try to execute coroutines with priority_val larger than i
 
 每一轮 while 循环中优先级为 10 的协程有 10 次机会被尝试执行，优先级为 100 的协程有 100 次机会被尝试执行，满足了上述要求。这样，我们进行无效的 ready_func 查询的可能性应该会减小。（当然，目前的实现仍然有很多问题，例如时间分布不均等，但是整体的思路应该是有效的）
 
+
+
 ## Task 3:
 
-#### 代码填写：
+#### 3.1 代码填写：
 ```cpp
     // TODO: Task 3
     // 使用 __builtin_prefetch 预取容易产生缓存缺失的内存
@@ -223,24 +227,24 @@ void sleep(uint64_t ms) {
     yield();      // 并调用 yield
 ```
 
-#### 性能分析：
+#### 3.2 性能分析：
 在运行中发现，即使已经有了多 loop、 多 batch, 系统性能仍然可能会有不稳定。为了获得相对可靠的结果，对于不同的 l (size) 参数，各重复运行 100 次（ batch size 和 loop 均为默认值），输出内容、处理数据均保存在了 ./material 目录下。以下为数据分析：
 
 共有 size = 2^25, 2^30, 2^32 三组数据。
 
 原始数据保存在相应文件的 original 工作表中。筛选数据表存在 filtered 工作表中（ size = 2^25, 2^30 数据筛选后没有变化），筛选标准为 naive 和 coroutine_batched 花费的时间都在其对应平均值上下 20% 以内。得到结果如下：
 
-![statistics1](./material/statistics_1.png)
+<img src="./material/statistics_1.png" alt="statistics1" style="zoom: 67%;" />
 
-可以看出 **数据规模越大，naive 耗时越长；数据规模较小的时候，协程带来的额外花费得不偿失；数据量较大的时候，使用协程有一定优势。**
+可以看出 **数据规模越大，naive 耗时越长；数据规模较小的时候，协程带来的额外花费得不偿失；数据量较大的时候，使用协程有一定优势。** 可以参考下**左图**。
 
-![graph1](./material/graph_1.png)
+![graph12](./material/graph_12.png)
 
-由于写的协程较为朴素，且会有多次不必要的上下文切换，上下文切换过程中耗费的时间较长。我们不妨考虑手动扣除上下文切换消耗的时间，以 2^25 组数据为基准，视 coroutine 组多花费的时间为上下文切换导致的开销。 在 2^30, 2^32 两组数据中扣除对应的时间，存储在 processed 工作表中。得到的新数据如下：
-
-![graph1](./material/graph_2.png)
+由于写的协程较为朴素，且会有多次不必要的上下文切换，上下文切换过程中耗费的时间较长。我们不妨考虑**手动扣除上下文切换消耗的时间**，以 2^25 组数据为基准，视 coroutine 组多花费的时间为上下文切换导致的开销。 在 2^30, 2^32 两组数据中扣除对应的时间，存储在 processed 工作表中。得到的新数据如上**右图**。
 
 这时候协程所带来的性能优势和论文中（占用大内存时） 优化至原先 50% 的结果较为相似了。
+
+
 
 ## 参考资料
 
@@ -252,9 +256,11 @@ void sleep(uint64_t ms) {
 
 [数据预取](https://www.cnblogs.com/dongzhiquan/p/3694858.html)
 
+
+
 ## 总结和感想
 
-#### 总结
+#### 5.1 总结
 
 - 对程序的内存布局有了初步的了解。栈内存与堆内存没有本质上的区别，我们可以用堆内存中的一块空间作为模拟栈。代码段也是内存中的一部分。
 - 对于函数调用、返回的过程值有了更深入的见解，例如一个函数在 return 之前一定会将栈帧回复成进入前的样子。
@@ -263,9 +269,8 @@ void sleep(uint64_t ms) {
 - 初步认识了协程、上下文切换等技术。协程切换开销小，在执行一些需要依赖内存、磁盘等“外部”数据、运算的函数时，执行其他协程再返回具有效率上的优越性。
 
 
-#### 感想
+#### 5.2 感想
 
 - 计算机系统是一个整体，各个组成部分互相配合，互相制约。在不同场景需要不同的技术来提高效率。
 - 对于 C ( C++ ) 程序来说，源代码一般可以与汇编代码良好的对应，无论是程序的执行还是内存的管理都不是“黑盒”，可以良好全面地分析解释。
 - 最后，感谢助教！让对系统几乎一无所知的同学也能完成（简单的）协程调度。从原理、实现、改进再到应用，这个 lab 质量实在太高了！
-
